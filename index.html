@@ -15,9 +15,9 @@
     <meta name="twitter:title" content="ALETI | Cloud, DevOps and Automation Consultancy">
     <meta name="twitter:description" content="We deliver automation for cloud, DevOps and platform engineering teams.">
     <meta name="twitter:image" content="https://aleti.io/assets/aleti-cloud-automation-hero.png">
-    <meta name="theme-color" content="#07111f">
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/styles.css">
+    <meta name="theme-color" content="#020712">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -40,16 +40,16 @@
             "opens": "09:00",
             "closes": "17:00"
           }
-        ],
-        "sameAs": []
+        ]
       }
     </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="/" aria-label="ALETI home">
+        <a class="brand" href="./" aria-label="ALETI home">
           <span class="brand-mark" aria-hidden="true">A</span>
           <span>ALETI</span>
         </a>
@@ -58,75 +58,189 @@
           <span></span><span></span><span></span>
         </button>
         <div class="nav-menu" id="nav-menu">
+          <a href="#home">Home</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-button" type="button" aria-expanded="false" aria-controls="services-menu">Services</button>
+            <div class="services-menu" id="services-menu">
+              <a href="#devops"><span>∞</span><strong>DevOps &amp; Automation</strong><small>CI/CD, IaC and delivery acceleration</small></a>
+              <a href="#devsecops"><span>◇</span><strong>DevSecOps &amp; Security</strong><small>Secure pipelines and cloud controls</small></a>
+              <a href="#migration"><span>☁</span><strong>Cloud Migration</strong><small>AWS, Azure and GCP migration</small></a>
+              <a href="#platform"><span>▱</span><strong>Platform Engineering</strong><small>Self-service cloud platforms</small></a>
+              <a href="#finops"><span>£</span><strong>Cloud FinOps</strong><small>Spend visibility and optimisation</small></a>
+              <a href="#cloud-native"><span>⬡</span><strong>Cloud Native Applications</strong><small>Modern app delivery and operations</small></a>
+            </div>
+          </div>
+          <a href="#method">Method</a>
+          <a href="#technologies">Technologies</a>
           <a href="#about">About</a>
-          <a href="#services">Services</a>
           <a href="#contact">Contact</a>
-          <a href="/privacy-policy/">Privacy</a>
+          <a class="nav-cta" href="#contact">Book a discovery call</a>
         </div>
       </nav>
     </header>
 
     <main id="main">
-      <section class="hero section">
+      <section class="hero" id="home">
+        <div class="hero-visual" aria-hidden="true">
+          <img src="assets/aleti-cloud-automation-hero.png" alt="">
+        </div>
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="intro-line">Digital Transformation Consultancy</p>
-            <h1>
-              <span class="desktop-headline">We deliver automation for cloud and DevOps teams.</span>
-              <span class="mobile-headline" aria-hidden="true"><span class="hero-line">We deliver</span><span class="hero-line">automation</span><span class="hero-line">for cloud and</span><span class="hero-line">DevOps teams.</span></span>
-            </h1>
-            <p class="hero-text">ALETI helps enterprises adopt cloud platforms, DevOps practices and automation-first delivery models that are fast, secure, simple and cost effective.</p>
+            <p class="section-label">Digital Transformation Consultancy</p>
+            <h1>We deliver automation for cloud and DevOps teams.</h1>
+            <p class="hero-kicker">Fast. Secure. Simple. Cost effective.</p>
+            <p class="hero-text">ALETI helps organisations modernise, secure and scale with cloud, DevOps, DevSecOps and platform engineering.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#contact">Book a consultation</a>
+              <a class="button button-primary" href="#contact">Book a discovery call</a>
               <a class="button button-secondary" href="#services">Explore services</a>
             </div>
           </div>
-          <div class="hero-media">
-            <img src="/assets/aleti-cloud-automation-hero.png" alt="Abstract secure cloud automation infrastructure with connected cloud nodes and pipeline paths" width="1536" height="864">
+          <div class="hero-panel" aria-label="ALETI cloud delivery priorities">
+            <div class="cloud-mark" aria-hidden="true">
+              <svg viewBox="0 0 220 140" role="img">
+                <path d="M61 109h105c22 0 40-16 40-37s-17-38-39-38c-6 0-12 1-17 4C141 20 123 8 102 8 73 8 50 30 48 58 30 61 16 75 16 93c0 9 4 16 11 21" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+                <path d="M110 42v54m0 0-20-20m20 20 20-20" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="panel-grid">
+              <span>CI/CD</span>
+              <span>IaC</span>
+              <span>Security</span>
+              <span>FinOps</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section service-summary" aria-labelledby="summary-title">
-        <div class="container split">
+      <section class="proof-strip" aria-label="ALETI delivery priorities">
+        <div class="container proof-grid">
           <div>
-            <p class="section-label">How ALETI helps</p>
-            <h2 id="summary-title">Build resilient cloud capability without slowing delivery.</h2>
+            <span class="proof-icon">01</span>
+            <strong>Automation-first</strong>
+            <p>Streamline delivery and remove manual toil.</p>
           </div>
-          <p>We combine AWS and Azure cloud engineering experience with Agile, DevOps and infrastructure-as-code practices so teams can modernise platforms, pipelines and applications with confidence.</p>
+          <div>
+            <span class="proof-icon">02</span>
+            <strong>Secure by design</strong>
+            <p>Embed security throughout the lifecycle.</p>
+          </div>
+          <div>
+            <span class="proof-icon">03</span>
+            <strong>Cloud native</strong>
+            <p>Build and run modern applications at scale.</p>
+          </div>
+          <div>
+            <span class="proof-icon">04</span>
+            <strong>Optimised spend</strong>
+            <p>Maximise value with FinOps practices.</p>
+          </div>
         </div>
       </section>
 
       <section class="section" id="services" aria-labelledby="services-title">
         <div class="container">
           <div class="section-head">
-            <p class="section-label">Services</p>
-            <h2 id="services-title">Cloud engineering, delivery and security expertise.</h2>
+            <p class="section-label">Our services</p>
+            <h2 id="services-title">End-to-end capabilities. Built for the cloud era.</h2>
           </div>
           <div class="services-grid">
-            <article class="service-card">
+            <article class="service-card" id="devops">
+              <span class="service-icon">∞</span>
               <h3>DevOps &amp; Automation</h3>
-              <p>ALETI helps organisations move beyond experimentation and build sustainable DevOps capability. We pair experienced engineers with your teams to embed automation, practical tooling and scalable delivery practices.</p>
+              <p>ALETI helps organisations move beyond experimentation and build sustainable DevOps capability with automation, practical tooling and scalable delivery practices.</p>
+              <ul>
+                <li>Faster delivery through CI/CD</li>
+                <li>Higher quality release practices</li>
+                <li>Lower operational cost</li>
+              </ul>
+              <a href="#contact" aria-label="Discuss DevOps and Automation">-></a>
             </article>
-            <article class="service-card">
+            <article class="service-card" id="devsecops">
+              <span class="service-icon">◇</span>
               <h3>DevSecOps &amp; Security</h3>
-              <p>Adopt DevSecOps to move faster while staying secure. We help bring security into public cloud platforms, CI/CD pipelines, container scanning and cloud-native lifecycle management.</p>
+              <p>Adopt DevSecOps to move faster while staying secure across cloud platforms, CI/CD pipelines, container scanning and cloud-native lifecycle management.</p>
+              <ul>
+                <li>Reduced cloud and pipeline risk</li>
+                <li>Continuous compliance patterns</li>
+                <li>Stronger security posture</li>
+              </ul>
+              <a href="#contact" aria-label="Discuss DevSecOps and Security">-></a>
             </article>
-            <article class="service-card">
+            <article class="service-card" id="migration">
+              <span class="service-icon">☁</span>
               <h3>Cloud Migration</h3>
-              <p>Cloud migration should improve operability, security and total cost of ownership. ALETI helps plan and execute migrations across AWS, Azure and GCP while modernising where it matters.</p>
+              <p>Plan and execute migrations across AWS, Azure and GCP while improving operability, security and total cost of ownership.</p>
+              <ul>
+                <li>Lower total cost of ownership</li>
+                <li>Reduced migration risk</li>
+                <li>Better business agility</li>
+              </ul>
+              <a href="#contact" aria-label="Discuss Cloud Migration">-></a>
             </article>
-            <article class="service-card">
+            <article class="service-card" id="platform">
+              <span class="service-icon">▱</span>
               <h3>Platform Engineering</h3>
-              <p>We build public cloud platforms using infrastructure as code, including Terraform, Pulumi, CloudFormation, ARM templates and Azure Bicep, so teams can provision reliable environments consistently.</p>
+              <p>Build self-service cloud platforms using infrastructure as code, including Terraform, Pulumi, CloudFormation, ARM templates and Azure Bicep.</p>
+              <ul>
+                <li>Improved developer experience</li>
+                <li>Consistent standards at scale</li>
+                <li>Repeatable platform delivery</li>
+              </ul>
+              <a href="#contact" aria-label="Discuss Platform Engineering">-></a>
             </article>
-            <article class="service-card">
+            <article class="service-card" id="finops">
+              <span class="service-icon">£</span>
               <h3>Cloud FinOps</h3>
-              <p>Cloud cost control is strongest when it is designed into the platform. We help teams improve visibility, reduce waste and align cloud spend with engineering and business outcomes.</p>
+              <p>Improve cloud visibility, reduce waste and align cloud spend with engineering outcomes and business priorities.</p>
+              <ul>
+                <li>Cost optimisation</li>
+                <li>Forecast accuracy</li>
+                <li>Financial accountability</li>
+              </ul>
+              <a href="#contact" aria-label="Discuss Cloud FinOps">-></a>
             </article>
-            <article class="service-card">
+            <article class="service-card" id="cloud-native">
+              <span class="service-icon">⬡</span>
               <h3>Cloud Native Applications</h3>
-              <p>We support developer-built applications with modern pipelines, containers, serverless patterns, PaaS and operational practices that improve productivity and resilience.</p>
+              <p>Support developer-built applications with modern pipelines, containers, serverless patterns, PaaS and resilient operating practices.</p>
+              <ul>
+                <li>Resilience at scale</li>
+                <li>Faster time to market</li>
+                <li>Better engineering experience</li>
+              </ul>
+              <a href="#contact" aria-label="Discuss Cloud Native Applications">-></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section method" id="method" aria-labelledby="method-title">
+        <div class="container method-grid">
+          <div class="section-head">
+            <p class="section-label">Our method</p>
+            <h2 id="method-title">A proven approach to successful outcomes.</h2>
+            <p>We connect technical delivery to business goals, then build the minimum reliable path from current state to operating model.</p>
+          </div>
+          <div class="method-steps">
+            <article>
+              <span>01</span>
+              <h3>Assess</h3>
+              <p>Understand goals, constraints, cloud estate, delivery bottlenecks and current operational risk.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Design</h3>
+              <p>Define the right architecture, delivery strategy, governance model and roadmap.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Deliver</h3>
+              <p>Implement with automation, quality engineering, security controls and platform standards built in.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Optimise</h3>
+              <p>Continuously improve performance, cost, resilience, security and developer experience.</p>
             </article>
           </div>
         </div>
@@ -134,49 +248,93 @@
 
       <section class="section about" id="about" aria-labelledby="about-title">
         <div class="container about-grid">
-          <div class="about-panel">
+          <div class="about-copy">
             <p class="section-label">About ALETI</p>
-            <h2 id="about-title">Headquartered in Newcastle Upon Tyne, founded to simplify cloud and DevOps adoption.</h2>
-            <p>Founded in 2021, ALETI helps organisations adopt cloud and DevOps practices quickly, securely and cost effectively. Our team understands operational problems and applies automation-first fixes that reduce cost and increase delivery confidence.</p>
+            <h2 id="about-title">Pragmatic expertise. Real-world impact.</h2>
+            <p>Headquartered in Newcastle Upon Tyne and founded in 2021, ALETI helps enterprises adopt cloud and DevOps practices that are fast, secure, simple and cost effective.</p>
+            <p>Our engineers build and maintain critical cloud platforms and pipelines for developer-built applications, following Agile and DevOps principles with an everything-as-code mindset.</p>
           </div>
-          <div class="expertise-list">
-            <div>
-              <h3>Our Story</h3>
-              <p>We help enterprises with cloud and DevOps adoption that is fast, secure, simple and cost effective.</p>
-            </div>
-            <div>
-              <h3>Technical Expertise</h3>
-              <p>Our engineers are certified AWS and Azure cloud specialists with experience in containers, serverless, CI/CD pipelines, PaaS and everything-as-code delivery.</p>
-            </div>
-            <div>
-              <h3>Automation Mindset</h3>
-              <p>We build and maintain critical cloud platforms and pipelines to unlock cost savings, operational resilience and business agility.</p>
+          <div class="about-map" aria-hidden="true">
+            <div class="map-card">
+              <span>UK</span>
+              <strong>Newcastle Upon Tyne</strong>
+              <p>Cloud engineering, platform automation and DevSecOps delivery.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section contact-cta" id="contact" aria-labelledby="contact-title">
+      <section class="section technologies" id="technologies" aria-labelledby="technologies-title">
+        <div class="container">
+          <div class="section-head">
+            <p class="section-label">Technologies</p>
+            <h2 id="technologies-title">Battle-tested tools for modern platforms.</h2>
+          </div>
+          <div class="tech-intro">
+            <p>We work with leading platforms and engineering tools to deliver modern, secure cloud solutions.</p>
+          </div>
+          <div class="tech-grid">
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS logo">AWS</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Microsoft Azure logo">Azure</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud logo">Google Cloud</span>
+            <span class="oracle-cloud-mark"><strong aria-hidden="true">OCI</strong>Oracle Cloud</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes logo">Kubernetes</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo">Docker</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform logo">Terraform</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins logo">Jenkins</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo">Git</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="Prometheus logo">Prometheus</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana logo">Grafana</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx logo">Nginx</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux logo">Linux</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
         <div class="container contact-grid">
           <div>
-            <p class="section-label">Contact</p>
-            <h2 id="contact-title">Talk to ALETI about your cloud platform or automation roadmap.</h2>
+            <p class="section-label">Consultation</p>
+            <h2 id="contact-title">Start with a focused cloud platform review.</h2>
+            <p>Tell us what you are trying to modernise, migrate, secure or automate. ALETI will respond with a practical next step, not a sales script.</p>
+            <div class="consultation-card">
+              <strong>What we can cover in the first conversation</strong>
+              <ul>
+                <li>Cloud platform maturity and delivery bottlenecks</li>
+                <li>DevOps, DevSecOps and CI/CD improvement areas</li>
+                <li>Migration, platform engineering or FinOps priorities</li>
+              </ul>
+            </div>
             <div class="contact-details">
               <p><strong>Email</strong><a href="mailto:info@aleti.io">info@aleti.io</a> / <a href="mailto:aletisoftwaresystems@gmail.com">aletisoftwaresystems@gmail.com</a></p>
-              <p><strong>Address</strong>Aleti Software Systems Ltd, Cobalt 3.1, Silver Fox Way, Cobalt Business Park, Newcastle Upon Tyne, NE27 0QJ</p>
+              <p><strong>Location</strong>Aleti Software Systems Ltd, Cobalt 3.1, Silver Fox Way, Cobalt Business Park, Newcastle Upon Tyne, NE27 0QJ</p>
               <p><strong>Hours</strong>Monday - Friday: 9am - 5pm. Saturday - Sunday: Closed.</p>
             </div>
           </div>
           <form class="contact-form" id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-            <label for="name">Name</label>
+            <div class="form-heading">
+              <span>Project enquiry</span>
+              <strong>Book a discovery call</strong>
+            </div>
+            <label for="name">Full name</label>
             <input id="name" name="name" autocomplete="name" required>
-            <label for="email">Email</label>
+            <label for="email">Work email</label>
             <input id="email" name="email" type="email" autocomplete="email" required>
-            <label for="message">Message</label>
+            <label for="company">Company</label>
+            <input id="company" name="company" autocomplete="organization">
+            <label for="service">Primary area</label>
+            <select id="service" name="service">
+              <option>DevOps &amp; Automation</option>
+              <option>DevSecOps &amp; Security</option>
+              <option>Cloud Migration</option>
+              <option>Platform Engineering</option>
+              <option>Cloud FinOps</option>
+              <option>Cloud Native Applications</option>
+            </select>
+            <label for="message">How can we help?</label>
             <textarea id="message" name="message" rows="5" required></textarea>
             <input type="hidden" name="source" value="aleti.io">
-            <button class="button button-primary" type="submit">Send message</button>
-            <p class="form-note">Static form strategy: replace the Formspree form ID in this file, or leave the mail fallback enabled in <code>script.js</code>.</p>
+            <button class="button button-primary" type="submit">Request consultation</button>
           </form>
         </div>
       </section>
@@ -185,20 +343,29 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
-          <a class="brand footer-brand" href="/">
+          <a class="brand footer-brand" href="./">
             <span class="brand-mark" aria-hidden="true">A</span>
             <span>ALETI</span>
           </a>
-          <p>Copyright © 2026 ALETI - All Rights Reserved.</p>
+          <p>Digital transformation consultancy. We deliver automation, cloud and DevOps adoption.</p>
         </div>
         <nav aria-label="Footer navigation">
           <a href="#about">About</a>
           <a href="#services">Services</a>
+          <a href="#technologies">Technologies</a>
           <a href="#contact">Contact</a>
-          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="privacy-policy/">Privacy Policy</a>
         </nav>
+        <div class="footer-contact">
+          <strong>Get in touch</strong>
+          <a href="mailto:info@aleti.io">info@aleti.io</a>
+          <span>Newcastle Upon Tyne, United Kingdom</span>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>Copyright © 2026 ALETI - All Rights Reserved.</span>
       </div>
     </footer>
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
