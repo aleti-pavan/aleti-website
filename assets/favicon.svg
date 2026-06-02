@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ALETI">
+  <rect width="64" height="64" rx="10" fill="#07111f"/>
+  <path d="M18 48 32 12l14 36h-9l-2.4-7.1H25.3L22.9 48h-4.9Zm10.1-15.5h7.8L32 20.7l-3.9 11.8Z" fill="#12b5a5"/>
+  <path d="M23 51h26" stroke="#c8a45d" stroke-width="4" stroke-linecap="round"/>
+</svg>
