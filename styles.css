@@ -837,6 +837,68 @@ img {
   background-repeat: no-repeat;
 }
 
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.form-status {
+  display: grid;
+  gap: 10px;
+  margin-top: 4px;
+  padding: 16px;
+  border: 1px solid rgba(22, 243, 223, 0.26);
+  border-radius: var(--radius);
+  color: #d7ecf6;
+  background: rgba(3, 12, 24, 0.76);
+}
+
+.form-status[hidden] {
+  display: none;
+}
+
+.form-status strong,
+.form-status span {
+  display: block;
+}
+
+.form-status strong {
+  color: #fff;
+  font-size: 0.98rem;
+}
+
+.form-status span {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.form-status-success {
+  border-color: rgba(22, 243, 223, 0.34);
+  background:
+    linear-gradient(135deg, rgba(22, 243, 223, 0.12), rgba(91, 141, 239, 0.08)),
+    rgba(3, 12, 24, 0.82);
+}
+
+.form-status-warning {
+  border-color: rgba(245, 179, 95, 0.36);
+  background:
+    linear-gradient(135deg, rgba(245, 179, 95, 0.12), rgba(22, 243, 223, 0.07)),
+    rgba(3, 12, 24, 0.82);
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.form-actions .button {
+  min-height: 42px;
+  padding: 11px 15px;
+  font-size: 0.9rem;
+}
+
 .site-footer {
   padding: 44px 0 0;
   border-top: 1px solid var(--line);

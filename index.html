@@ -311,7 +311,7 @@
               <p><strong>Hours</strong>Monday - Friday: 9am - 5pm. Saturday - Sunday: Closed.</p>
             </div>
           </div>
-          <form class="contact-form" id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+          <form class="contact-form" id="contact-form" method="POST" data-contact-email="info@aleti.io" data-form-endpoint="">
             <div class="form-heading">
               <span>Project enquiry</span>
               <strong>Book a discovery call</strong>
@@ -335,6 +335,7 @@
             <textarea id="message" name="message" rows="5" required></textarea>
             <input type="hidden" name="source" value="aleti.io">
             <button class="button button-primary" type="submit">Request consultation</button>
+            <div class="form-status" id="form-status" role="status" aria-live="polite" hidden></div>
           </form>
         </div>
       </section>

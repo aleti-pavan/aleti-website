@@ -47,19 +47,111 @@ if (servicesButton && servicesMenu) {
 const contactForm = document.querySelector("#contact-form");
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    const action = contactForm.getAttribute("action") || "";
-    if (!action.includes("your-form-id")) {
+  const formStatus = contactForm.querySelector("#form-status");
+  const submitButton = contactForm.querySelector("button[type='submit']");
+
+  const showFormStatus = (type, html) => {
+    if (!formStatus) {
+      return;
+    }
+    formStatus.className = `form-status form-status-${type}`;
+    formStatus.innerHTML = html;
+    formStatus.hidden = false;
+  };
+
+  const buildEnquiry = (formData) => {
+    const fields = [
+      ["Name", formData.get("name")],
+      ["Email", formData.get("email")],
+      ["Company", formData.get("company")],
+      ["Primary area", formData.get("service")],
+      ["Source", formData.get("source")]
+    ];
+    const message = String(formData.get("message") || "").trim();
+    const summary = fields
+      .filter(([, value]) => String(value || "").trim())
+      .map(([label, value]) => `${label}: ${String(value).trim()}`)
+      .join("\n");
+
+    return `${summary}\n\nMessage:\n${message}`;
+  };
+
+  const getEndpoint = () => {
+    const endpoint = contactForm.getAttribute("data-form-endpoint") || contactForm.getAttribute("action") || "";
+    if (!endpoint || endpoint.includes("your-form-id") || endpoint.startsWith("mailto:")) {
+      return "";
+    }
+    return endpoint;
+  };
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
       return;
     }
 
-    event.preventDefault();
     const formData = new FormData(contactForm);
-    const name = encodeURIComponent(String(formData.get("name") || ""));
-    const email = encodeURIComponent(String(formData.get("email") || ""));
-    const company = encodeURIComponent(String(formData.get("company") || ""));
-    const message = encodeURIComponent(String(formData.get("message") || ""));
-    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0ACompany: ${company}%0D%0A%0D%0A${message}`;
-    window.location.href = `mailto:info@aleti.io?subject=ALETI%20website%20enquiry&body=${body}`;
+    const endpoint = getEndpoint();
+    const contactEmail = contactForm.getAttribute("data-contact-email") || "info@aleti.io";
+    const enquiry = buildEnquiry(formData);
+    const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent("ALETI website enquiry")}&body=${encodeURIComponent(enquiry)}`;
+    if (formStatus) {
+      formStatus.dataset.enquiry = enquiry;
+    }
+
+    if (endpoint && submitButton instanceof HTMLButtonElement) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          body: formData,
+          headers: { Accept: "application/json" }
+        });
+
+        if (!response.ok) {
+          throw new Error("Form endpoint rejected the enquiry.");
+        }
+
+        contactForm.reset();
+        showFormStatus("success", "<strong>Thanks, your enquiry has been sent.</strong><span>ALETI will review it and respond with the next step.</span>");
+      } catch (error) {
+        showFormStatus(
+          "warning",
+          `<strong>We could not send this automatically.</strong><span>Your enquiry is still ready. You can email it or copy the details below.</span><div class="form-actions"><a class="button button-secondary" href="${mailto}">Open email</a><button class="button button-secondary copy-enquiry" type="button">Copy enquiry</button></div>`
+        );
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Request consultation";
+      }
+      return;
+    }
+
+    showFormStatus(
+      "success",
+      `<strong>Thanks, your enquiry is ready.</strong><span>To keep you on the website, we have prepared the message here. Email it to ALETI or copy it for later.</span><div class="form-actions"><a class="button button-secondary" href="${mailto}">Open email</a><button class="button button-secondary copy-enquiry" type="button">Copy enquiry</button></div>`
+    );
+  });
+
+  contactForm.addEventListener("click", async (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement) || !target.classList.contains("copy-enquiry") || !formStatus) {
+      return;
+    }
+
+    const enquiry = formStatus.dataset.enquiry || "";
+    if (!enquiry) {
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(enquiry);
+      target.textContent = "Copied";
+    } catch (error) {
+      target.textContent = "Select and copy";
+    }
   });
 }
