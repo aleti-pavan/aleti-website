@@ -78,7 +78,13 @@ if (contactForm) {
 
   const getEndpoint = () => {
     const endpoint = contactForm.getAttribute("data-form-endpoint") || contactForm.getAttribute("action") || "";
-    if (!endpoint || endpoint.includes("your-form-id") || endpoint.startsWith("mailto:")) {
+    if (
+      !endpoint ||
+      endpoint.includes("your-form-id") ||
+      endpoint.startsWith("mailto:") ||
+      endpoint.startsWith("#") ||
+      endpoint.startsWith("?")
+    ) {
       return "";
     }
     return endpoint;
